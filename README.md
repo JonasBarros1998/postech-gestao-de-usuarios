@@ -11,3 +11,5 @@
 - Inicie o projeto. Ele irá iniciar na porta **8080**
 - As collections que esse projeto utiliza, se encontram na pasta chamada **Postech Fase 05 > usuarios**
 - link para as collections: [collections postmam](https://github.com/JonasBarros1998/ecommerce-infra/blob/main/collections-postman.json)
+
+
