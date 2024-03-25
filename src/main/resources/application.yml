@@ -1,0 +1,36 @@
+
+spring:
+  datasource:
+    driver-class-name: "org.postgresql.Driver"
+    username: ${nome_do_usuario}
+    password: ${senha}
+    url: "jdbc:postgresql://localhost:5432/ecommerce"
+  config:
+    import:
+      - aws-secretsmanager:/secrets/base_de_dados_ecommerce_v2
+      - aws-secretsmanager:/secrets/chaves_de_seguranca_v2
+      - aws-secretsmanager:/secrets/kms_id_v2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  web:
+    locale: pt_BR
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${id_cliente}
+            client-secret: ${segredo_cliente}
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+server:
+  port: 8081
+
+aplicacao:
+  kmsID: ${kms_id}

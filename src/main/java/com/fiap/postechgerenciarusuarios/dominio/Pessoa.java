@@ -9,7 +9,7 @@ import java.util.UUID;
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Proxy(lazy = false)
-abstract sealed class Pessoa permits Usuario, Administrador {
+abstract sealed class Pessoa permits Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
